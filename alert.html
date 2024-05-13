@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Custom Alert with Animation</title>
+<style>
+  .alert {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ffffff;
+    border: 1px solid #cccccc;
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    animation: slideIn 0.5s ease forwards, slideOut 0.5s ease forwards 2s;
+    display: none;
+  }
+
+  @keyframes slideIn {
+    from {
+      transform: translate(-50%, -100%);
+      opacity: 0;
+    }
+    to {
+      transform: translate(-50%, -50%);
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideOut {
+    from {
+      transform: translate(-50%, -50%);
+      opacity: 1;
+    }
+    to {
+      transform: translate(-50%, 100%);
+      opacity: 0;
+    }
+  }
+</style>
+</head>
+<body>
+<h1>hello nova!</h1>
+<div id="customAlert" class="alert">Hi</div>
+
+<script>
+  // Function to show the custom alert
+  function showAlert() {
+    var customAlert = document.getElementById('customAlert');
+    customAlert.style.display = 'block';
+  }
+
+  // Call the showAlert function to display the alert
+  showAlert();
+</script>
+
+</body>
+</html>
